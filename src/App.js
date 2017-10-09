@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   render() {
@@ -8,9 +7,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">A long time ago, in a galaxy far, far away...</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <main>
+          Meesa want to make web app, okey-tay?
+        </main>
       </div>
     );
   }
