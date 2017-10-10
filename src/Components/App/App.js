@@ -1,36 +1,23 @@
 import React, { Component } from 'react';
+import dataCleaner from '../../helper'
+import Crawl from '../Crawl/Crawl'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      films: [],
+      people: [],
+      planets: [],
+      vehicles: []
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <header className="side-bar">
-          <div className="crawl">
-            <h2 className="crawl-title">Episode V</h2>
-            <h2 className="crawl-title">The Empire Strikes Back</h2>
-            <h3 className="crawl-text">
-              It is a dark time for the
-              Rebellion. Although the Death
-              Star has been destroyed,
-              Imperial troops have driven the
-              Rebel forces from their hidden
-              base and pursued them across
-              the galaxy.
-
-              Evading the dreaded Imperial
-              Starfleet, a group of freedom
-              fighters led by Luke Skywalker
-              has established a new secret
-              base on the remote ice world
-              of Hoth.
-
-              The evil lord Darth Vader,
-              obsessed with finding young
-              Skywalker, has dispatched
-              thousands of remote probes into
-              the far reaches of space....
-            </h3>
-          </div>
+          <Crawl films={this.state.films}/>
         </header>
 
         <main className="content-container">
@@ -152,6 +139,51 @@ class App extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    const films = this.getApi('films');
+    // const people = this.getApi('people');
+    // const planets = this.getApi('planets');
+    // const vehicles = this.getApi('vehicles');
+  }
+
+  getApi(category) {
+    fetch(`https:/swapi.co/api/${category}`)
+    .then(dataObject => dataObject.json())
+    .then(dirtyData => dataCleaner(category, dirtyData.results))
+    .then((parsedData) => {
+      // console.log(parsedData);
+      this.setState({
+        [category]: parsedData,
+      })
+    })
+  }
+
+
+  // getStarWarData() {
+  //   fetch('https://swapi.co/api/')
+  //   //takes api call and makes it an object
+  //   .then(dataObject => dataObject.json())
+  //   //traverses the object to the key 'people'
+  //   .then(catUrl => {
+  //     // const categoryApi = catUrl.filter( (url) => {
+  //     //   if (url === 'people', 'planets', 'vehicles') {
+  //     //     console.log(url);
+  //     //   }
+  //     // })
+  //     console.log(catUrl);
+  //   })
+
+
+    // //the key people returns a url of another api so we need to 'fetch' from that api
+    // .then(stuff => {
+    //   ///returning the result of the second fetch as an object with the .json()
+    //   return fetch(stuff).then(things =>  things.json())
+    //   //logging the result of the fetch
+    //   .then(whatIsIt => console.log(whatIsIt))
+    // })
+
+  // }
 }
 
 export default App;
