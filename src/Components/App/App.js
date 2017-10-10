@@ -16,9 +16,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="side-bar">
-          <Crawl films={this.state.films}/>
-        </header>
+        {
+          this.state.films.length &&
+          <header className="side-bar">
+            <Crawl films={this.state.films}/>
+          </header>
+        }
 
         <main className="content-container">
           <div className="title-container">
