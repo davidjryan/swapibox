@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
+import ViewFavorites from '../ViewFavorites/ViewFavorites'
+import Card from '../Card/Card'
+import Buttons from '../Buttons/Buttons'
+
 
 class App extends Component {
   constructor() {
@@ -26,115 +30,12 @@ class App extends Component {
         <main className="content-container">
           <div className="title-container">
             <h1 className="page-title">SWapi-Box</h1>
-            <div className="view-favorite">
-              View Favorites
-              <span className="favorite-count">0</span>
-            </div>
+            <ViewFavorites />
           </div>
           <div className="main-content-container">
-            <div className="button-container">
-
-              <button>people</button>
-              <button>planets</button>
-              <button>vehicles</button>
-            </div>
+            <Buttons />
             <div className="card-container">
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
-              <div className="card">
-                <h2 className="card-title">
-                  Luke Skywalker
-                  <button className="favorite-button">
-                    &#x2606;
-                  </button>
-                </h2>
-                <p>Homeworld</p>
-                <p>Species</p>
-                <p>Language</p>
-                <p>Population</p>
-              </div>
+              <Card />
             </div>
           </div>
 
