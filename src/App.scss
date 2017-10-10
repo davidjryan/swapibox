@@ -1,5 +1,6 @@
 .App {
-  text-align: center; }
+  text-align: center;
+}
 
 .side-bar {
   background-color: #222;
@@ -8,14 +9,21 @@
   color: white;
   bottom: 0;
   margin-right: auto;
-  overflow-x: hidden;
+   overflow-x: hidden;
   position: fixed;
   top: 0;
-  width: 300px; }
+  width: 300px;
+}
 
 .content-container {
   margin-left: 300px;
-  width: auto; }
+  width: auto;
+}
+
+.title {
+  
+}
 
 .App-title {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+}
