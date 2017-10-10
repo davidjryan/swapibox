@@ -1,4 +1,5 @@
-@import "./App.css";
+@import "./Components/App/App.css";
+@import "./Components/Crawl/Crawl.css";
 
 body {
   margin: 0;
