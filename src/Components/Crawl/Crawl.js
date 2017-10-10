@@ -5,15 +5,14 @@ const Crawl = ({ films }) => {
     const movieCrawl = films.find( (film) => {
       return film.episodeNum === randomNumber
     })
-
     console.log(movieCrawl);
     return (
       <aside className="crawl">
-        {/* <h2 className="crawl-title">{movieCrawl.title}</h2>
+        <h2 className="crawl-title">{movieCrawl.title}</h2>
         <h2 className="crawl-title">{movieCrawl.releaseYear}</h2>
         <h3 className="crawl-text">
           {movieCrawl.crawlText}
-        </h3> */}
+        </h3>
       </aside>
     )
 
