@@ -45,49 +45,71 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const films = this.getApi('films');
-    // const people = this.getApi('people');
-    // const planets = this.getApi('planets');
-    // const vehicles = this.getApi('vehicles');
+    let unresolvedPromises = []
+    const films = fetch('https://swapi.co/api/films/')
+      .then(filmData => filmData.json())
+    const people = fetch('https://swapi.co/api/people/')
+      .then(peopleData => peopleData.json())
+    const planets = fetch('https://swapi.co/api/planets/')
+      .then(planetData => planetData.json())
+    const vehicles = fetch('https://swapi.co/api/vehicles/')
+      .then(vehicleData => vehicleData.json())
+
+    unresolvedPromises.push(films, people, planets, vehicles);
+    this.resolvePromises(unresolvedPromises)
   }
 
-  getApi(category) {
-    fetch(`https:/swapi.co/api/${category}`)
-    .then(dataObject => dataObject.json())
-    .then(dirtyData => dataCleaner(category, dirtyData.results))
-    .then((parsedData) => {
-      // console.log(parsedData);
-      this.setState({
-        [category]: parsedData,
+  resolvePromises(incomingPromises) {
+    return Promise.all(incomingPromises)
+      .then(resolvingPromise => {
+        const speciesApiUrls = resolvingPromise[1].results.map( (person) => person.species);
+
+        const filmData = resolvingPromise[0].results;
+        // const peopleData = this.getHomeworldData(resolvingPromise[1].results).then(incompletePerson => this.getSpeciesData(incompletePerson,  speciesApiUrls));
+        const planetData = this.getPlanetData(resolvingPromise[2].results)
+        const vehicleData = resolvingPromise[3].results;
+        resolvingPromise.map( (category) => {
+          console.log(planetData);
+        })
       })
-    })
   }
-
-
-  // getStarWarData() {
-  //   fetch('https://swapi.co/api/')
-  //   //takes api call and makes it an object
-  //   .then(dataObject => dataObject.json())
-  //   //traverses the object to the key 'people'
-  //   .then(catUrl => {
-  //     // const categoryApi = catUrl.filter( (url) => {
-  //     //   if (url === 'people', 'planets', 'vehicles') {
-  //     //     console.log(url);
-  //     //   }
-  //     // })
-  //     console.log(catUrl);
-  //   })
-
-
-    // //the key people returns a url of another api so we need to 'fetch' from that api
-    // .then(stuff => {
-    //   ///returning the result of the second fetch as an object with the .json()
-    //   return fetch(stuff).then(things =>  things.json())
-    //   //logging the result of the fetch
-    //   .then(whatIsIt => console.log(whatIsIt))
-    // })
-
+  //
+  // getHomeworldData(peopleDataToParse) {
+  //   if(peopleDataToParse) {
+  //     const peoplePlanetData = peopleDataToParse.map( (person) =>
+  //       fetch(person.homeworld)
+  //         .then(planetInfo => planetInfo.json())
+  //           .then(planet => Object.assign({name: person.name, homeworld: planet.name, homeworldPopulation: planet.population}))
+  //     )
+  //     return Promise.all(peoplePlanetData).then(personInProgress =>  personInProgress)
+  //   }
   // }
+  //
+  // getSpeciesData(personToComplete, speciesUrl) {
+  //   if(speciesUrl) {
+  //     const speciesInfo = speciesUrl.map( (url) =>
+  //       fetch(url).then(speciesData => speciesData.json())
+  //         .then(creature => Object.assign({speciesData: {species: creature.name, language: creature.language}}, {personData: personToComplete)})
+  //     )
+  //     return Promise.all(speciesInfo).then(completePerson =>  console.log(completePerson))
+  //   }
+  // }
+
+  getPlanetData(planetDataToParse) {
+    if(planetDataToParse) {
+      const detailedPlanetData = planetDataToParse.map( (planets) => {
+        const planetInhabitants = planets.residents.map( (planetUrl) => {
+          return fetch(planetUrl).then(planetApiCall => planetApiCall.json())
+            .then(planetDwellers => planetDwellers)
+        })
+
+        return Promise.all(planetInhabitants).then( inhabitant =>
+          Object.assign(planets, {residents: planetInhabitants})
+        )
+      })
+      return Promise.all(detailedPlanetData).then(planetData => planetData)
+    }
+  }
 }
 
 export default App;
