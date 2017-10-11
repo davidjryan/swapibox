@@ -3,7 +3,7 @@ import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
 import ViewFavorites from '../ViewFavorites/ViewFavorites'
 import Card from '../Card/Card'
-import Buttons from '../Buttons/Buttons'
+import Buttons from '../Button/Button'
 
 
 class App extends Component {
@@ -13,7 +13,8 @@ class App extends Component {
       films: [],
       people: [],
       planets: [],
-      vehicles: []
+      vehicles: [],
+      favorites: [],
     }
   }
 
@@ -42,26 +43,7 @@ class App extends Component {
       </div>
     );
   }
-
-  componentDidMount() {
-    const films = this.getApi('films');
-    // const people = this.getApi('people');
-    // const planets = this.getApi('planets');
-    // const vehicles = this.getApi('vehicles');
-  }
-
-  getApi(category) {
-    fetch(`https:/swapi.co/api/${category}`)
-    .then(dataObject => dataObject.json())
-    .then(dirtyData => dataCleaner(category, dirtyData.results))
-    .then((parsedData) => {
-      // console.log(parsedData);
-      this.setState({
-        [category]: parsedData,
-      })
-    })
-  }
-
+  
   showPlanets() {
     // this.setState
   }
@@ -74,30 +56,15 @@ class App extends Component {
     // this.setState
   }
 
-  // getStarWarData() {
-  //   fetch('https://swapi.co/api/')
-  //   //takes api call and makes it an object
-  //   .then(dataObject => dataObject.json())
-  //   //traverses the object to the key 'people'
-  //   .then(catUrl => {
-  //     // const categoryApi = catUrl.filter( (url) => {
-  //     //   if (url === 'people', 'planets', 'vehicles') {
-  //     //     console.log(url);
-  //     //   }
-  //     // })
-  //     console.log(catUrl);
-  //   })
+  showFavorites() {
+    // this.setState
+  }
 
-
-    // //the key people returns a url of another api so we need to 'fetch' from that api
-    // .then(stuff => {
-    //   ///returning the result of the second fetch as an object with the .json()
-    //   return fetch(stuff).then(things =>  things.json())
-    //   //logging the result of the fetch
-    //   .then(whatIsIt => console.log(whatIsIt))
-    // })
-
-  // }
+  toggleFav(card) {
+    // grab favorite array
+    // add to favorite array
+    // reset state with edited array
+  }
 }
 
 export default App;
