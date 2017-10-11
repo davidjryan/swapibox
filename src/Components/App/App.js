@@ -30,10 +30,9 @@ class App extends Component {
         <main className="content-container">
           <div className="title-container">
             <h1 className="page-title">SWapi-Box</h1>
-            <ViewFavorites />
+            <ButtonContainer />
           </div>
           <div className="main-content-container">
-            <Buttons />
             <div className="card-container">
               <Card />
             </div>
@@ -63,6 +62,17 @@ class App extends Component {
     })
   }
 
+  showPlanets() {
+    // this.setState
+  }
+
+  showVehicles() {
+    // this.setState
+  }
+
+  showPeople() {
+    // this.setState
+  }
 
   // getStarWarData() {
   //   fetch('https://swapi.co/api/')
