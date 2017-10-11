@@ -5,7 +5,6 @@ const Crawl = ({ films }) => {
     const movieCrawl = films.find( (film) => {
       return film.episodeNum === randomNumber
     })
-    console.log(movieCrawl);
     return (
       <aside className="crawl">
         <h2 className="crawl-title">{movieCrawl.title}</h2>
