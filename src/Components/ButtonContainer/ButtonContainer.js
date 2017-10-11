@@ -3,10 +3,9 @@ import './ButtonContainer.css';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 
-const ButtonContainer({showPeople, showPlanets, showVehicles, showFavorites, favLength}) => {
+const ButtonContainer = ({showPeople, showPlanets, showVehicles, showFavorites, favLength}) => {
 
-
-  render(
+  return (
       <div className="btns">
         <Button givenClass={'people-btn'}
           clickEvent={ showPeople } />
@@ -19,3 +18,5 @@ const ButtonContainer({showPeople, showPlanets, showVehicles, showFavorites, fav
       </div>
      )
 }
+
+export default ButtonContainer

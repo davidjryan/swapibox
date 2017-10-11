@@ -20,7 +20,8 @@ const Card = ({cardData, toggleFavorite}) => {
       <div className="card">
         <h2 className="card-title">
           Luke Skywalker
-          <Button className="favorite-button" />
+          <Button className="favorite-button"
+                  />
         </h2>
         <p>Homeworld</p>
         <p>Species</p>
@@ -32,7 +33,7 @@ const Card = ({cardData, toggleFavorite}) => {
 
 Card.PropTypes = {
   cardData: PropTypes.object.isRequired,
-  toggleFavorite: PropTypes.function.isRequired
+  // toggleFavorite: PropTypes.function.isRequired
 }
 
 export default Card;
