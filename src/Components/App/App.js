@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
-import ViewFavorites from '../ViewFavorites/ViewFavorites'
+// import ViewFavorites from '../ViewFavorites/ViewFavorites'
 import Card from '../Card/Card'
-import Buttons from '../Button/Button'
+import ButtonContainer from '../ButtonContainer/ButtonContainer'
 
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
       </div>
     );
   }
-  
+
   showPlanets() {
     // this.setState
   }
@@ -61,6 +61,7 @@ class App extends Component {
     // grab favorite array
     // add to favorite array
     // reset state with edited array
+  }
 
   componentDidMount() {
     let unresolvedPromises = []
