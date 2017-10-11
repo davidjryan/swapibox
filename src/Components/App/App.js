@@ -3,7 +3,7 @@ import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
 import ViewFavorites from '../ViewFavorites/ViewFavorites'
 import Card from '../Card/Card'
-import Buttons from '../Buttons/Buttons'
+import Buttons from '../Button/Button'
 
 
 class App extends Component {
@@ -11,6 +11,7 @@ class App extends Component {
     super()
     this.state = {
       fullyOperationalData: []
+
     }
   }
 
@@ -27,10 +28,9 @@ class App extends Component {
         <main className="content-container">
           <div className="title-container">
             <h1 className="page-title">SWapi-Box</h1>
-            <ViewFavorites />
+            <ButtonContainer />
           </div>
           <div className="main-content-container">
-            <Buttons />
             <div className="card-container">
               <Card />
             </div>
@@ -40,6 +40,27 @@ class App extends Component {
       </div>
     );
   }
+  
+  showPlanets() {
+    // this.setState
+  }
+
+  showVehicles() {
+    // this.setState
+  }
+
+  showPeople() {
+    // this.setState
+  }
+
+  showFavorites() {
+    // this.setState
+  }
+
+  toggleFav(card) {
+    // grab favorite array
+    // add to favorite array
+    // reset state with edited array
 
   componentDidMount() {
     let unresolvedPromises = []
