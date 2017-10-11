@@ -65,15 +65,38 @@ class App extends Component {
         const speciesApiUrls = resolvingPromise[1].results.map( (person) => person.species);
 
         const filmData = resolvingPromise[0].results;
+        const peopleData = this.getPersonData(resolvingPromise[1].results)
         // const peopleData = this.getHomeworldData(resolvingPromise[1].results).then(incompletePerson => this.getSpeciesData(incompletePerson,  speciesApiUrls));
+
         const planetData = this.getPlanetData(resolvingPromise[2].results)
         const vehicleData = resolvingPromise[3].results;
         resolvingPromise.map( (category) => {
-          console.log(planetData);
+          // console.log(peopleData);
         })
       })
   }
-  //
+
+  getPersonData(personDatatoParse) {
+    if(personDatatoParse) {
+      const completePerson = personDatatoParse.map( (person) => {
+        const speciesInfo = person.species.map( (speciesUrl) => {
+          return fetch(speciesUrl).then(speciesData =>
+             speciesData.json())
+            .then(creature => Object.assign({species: creature.name, language: creature.language})
+            )
+          })
+        const homeworldInfo = fetch(person.homeworld)
+          .then(homeworldUrl => homeworldUrl.json())
+            .then(planet => Object.assign({homeworld: planet.homeworld}, {homeworldPopulation: planet.population}))
+
+        console.log(speciesInfo[0]);
+        console.log(homeworldInfo);
+        return Object.assign({name: person.name}, speciesInfo)
+        })
+      return Promise.all(completePerson).then(info => info)
+    }
+  }
+
   // getHomeworldData(peopleDataToParse) {
   //   if(peopleDataToParse) {
   //     const peoplePlanetData = peopleDataToParse.map( (person) =>
@@ -89,9 +112,8 @@ class App extends Component {
   //   if(speciesUrl) {
   //     const speciesInfo = speciesUrl.map( (url) =>
   //       fetch(url).then(speciesData => speciesData.json())
-  //         .then(creature => Object.assign({speciesData: {species: creature.name, language: creature.language}}, {personData: personToComplete)})
-  //     )
-  //     return Promise.all(speciesInfo).then(completePerson =>  console.log(completePerson))
+  //         .then(creature => Object.assign({species: creature.name, language: creature.language}, personToComplete)))
+  //     return Promise.all(speciesInfo).then(completePerson =>  completePerson)
   //   }
   // }
 
