@@ -10,10 +10,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      films: [],
-      people: [],
-      planets: [],
-      vehicles: []
+      fullyOperationalData: []
     }
   }
 
@@ -21,9 +18,9 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.state.films.length &&
+          this.state.fullyOperationalData &&
           <header className="side-bar">
-            <Crawl films={this.state.films}/>
+            {/* <Crawl films={this.state.films}/> */}
           </header>
         }
 
@@ -62,49 +59,49 @@ class App extends Component {
   resolvePromises(incomingPromises) {
     return Promise.all(incomingPromises)
       .then(resolvingPromise => {
-        const speciesApiUrls = resolvingPromise[1].results.map( (person) => person.species);
-
         const filmData = resolvingPromise[0].results;
-        // const peopleData = this.getHomeworldData(resolvingPromise[1].results).then(incompletePerson => this.getSpeciesData(incompletePerson,  speciesApiUrls));
+        const peopleData = this.getPersonData(resolvingPromise[1].results)
         const planetData = this.getPlanetData(resolvingPromise[2].results)
         const vehicleData = resolvingPromise[3].results;
-        resolvingPromise.map( (category) => {
-          console.log(planetData);
-        })
+
+        return Promise.all([filmData, peopleData, planetData, vehicleData])
+          .then(fullyOperationalData => this.setState({fullyOperationalData: dataCleaner(fullyOperationalData)}))
       })
   }
-  //
-  // getHomeworldData(peopleDataToParse) {
-  //   if(peopleDataToParse) {
-  //     const peoplePlanetData = peopleDataToParse.map( (person) =>
-  //       fetch(person.homeworld)
-  //         .then(planetInfo => planetInfo.json())
-  //           .then(planet => Object.assign({name: person.name, homeworld: planet.name, homeworldPopulation: planet.population}))
-  //     )
-  //     return Promise.all(peoplePlanetData).then(personInProgress =>  personInProgress)
-  //   }
-  // }
-  //
-  // getSpeciesData(personToComplete, speciesUrl) {
-  //   if(speciesUrl) {
-  //     const speciesInfo = speciesUrl.map( (url) =>
-  //       fetch(url).then(speciesData => speciesData.json())
-  //         .then(creature => Object.assign({speciesData: {species: creature.name, language: creature.language}}, {personData: personToComplete)})
-  //     )
-  //     return Promise.all(speciesInfo).then(completePerson =>  console.log(completePerson))
-  //   }
-  // }
+
+  getPersonData(personDatatoParse) {
+    if(personDatatoParse) {
+      const completePerson = personDatatoParse.map( (person) => {
+        let incompletePerson ={name: person.name}
+
+        return fetch(person.homeworld)
+        .then(homeworldUrl => homeworldUrl.json())
+          .then(planet => Object.assign(incompletePerson, {homeworld: planet.name, homeworldPopulation: planet.population}))
+          .then( getSpeciesData => {
+            const unresolvedSpeciesPromises = person.species.map( (speciesUrl) => {
+              return fetch(speciesUrl).then(speciesData => speciesData.json())
+            })
+            return Promise.all(unresolvedSpeciesPromises)
+            .then(resolvedSpecies => Object.assign(incompletePerson, {species: resolvedSpecies}))
+          })
+        })
+
+      return Promise.all(completePerson).then(youCompleteMe => youCompleteMe )
+    }
+  }
 
   getPlanetData(planetDataToParse) {
     if(planetDataToParse) {
       const detailedPlanetData = planetDataToParse.map( (planets) => {
+        let incompletePlanet = {name: planets.name, terrain: planets.terrain, population: planets.population, climate: planets.climate}
+
         const planetInhabitants = planets.residents.map( (planetUrl) => {
           return fetch(planetUrl).then(planetApiCall => planetApiCall.json())
             .then(planetDwellers => planetDwellers)
         })
 
         return Promise.all(planetInhabitants).then( inhabitant =>
-          Object.assign(planets, {residents: planetInhabitants})
+          Object.assign(incompletePlanet, {residents: inhabitant})
         )
       })
       return Promise.all(detailedPlanetData).then(planetData => planetData)

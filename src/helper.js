@@ -1,47 +1,18 @@
-export default function dataCleaner(category, dataObject) {
-  if(category === 'films') {
-    return dataObject.map( (film) => {
-      return {
-          title: film.title,
-          releaseYear: film.release_date,
-          crawlText: film.opening_crawl,
-          episodeNum: film.episode_id
-      }
-    })
-  }
+export default function dataCleaner(dataObject) {
 
-  if(category === 'people') {
-    return dataObject.map( (film) => {
-      return {
-          name: film.name,
-          homeworld: film.homeworld,
-          species: film.species,
-          language: film.species,
-          homeworldPopulation: film.homeworld
-      }
-    })
-  }
+  console.log(dataObject[0]);
+  const films = dataObject[0].map( filmData =>
+    Object.assign({title: filmData.title, releaseYear: filmData.release_date, crawlText: filmData.opening_crawl, episodeNum: filmData.episode_id}));
 
-  if(category === 'planets') {
-    return dataObject.map( (film) => {
-      return {
-          name: film.name,
-          terrain: film.terrain,
-          population: film.population,
-          climate: film.climate,
-          residents: film.residents
-      }
-    })
-  }
+  const people = dataObject[1].map( peopleData =>
+    Object.assign({name: peopleData.name, homeworld: peopleData.homeworld, species: peopleData.species[0].name, language: peopleData.species[0].language, homeworldPopulation: peopleData.homeworldPopulation}));
 
-  if(category === 'vehicles') {
-    return dataObject.map( (film) => {
-      return {
-          name: film.name,
-          model: film.model,
-          class: film.vehicle_class,
-          passengers: film.passengers,
-      }
-    })
-  }
+  const planets = dataObject[2].map( planetData =>
+    Object.assign({name: planetData.name, terrain: planetData.terrain, population: planetData.population, climate: planetData.climate, residents: planetData.residents.map(resident => resident.name)}));
+
+  const vehicles = dataObject[3].map( vehicleData =>
+    Object.assign({name: vehicleData.name, model: vehicleData.model, class: vehicleData.vehicle_class, passengers: vehicleData.passengers}));
+
+
+  return ([films, people, planets, vehicles])
 }
