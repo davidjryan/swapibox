@@ -4,32 +4,37 @@ import PropTypes from 'prop-types';
 
 const Button = ({ click, text, givenClass, category, cardInformation }) => {
   let buttonClass;
-  console.log(cardInformation);
-  if(!cardInformation) {
-    buttonClass = `${givenClass} nav-btn`
+  if (!cardInformation) {
+    buttonClass = `${givenClass} nav-btn`;
     return (
-      <button onClick={() => click(category)}
-              className={buttonClass}>
+      <button
+        onClick={() => click(category)}
+        className={buttonClass}>
         {text}
       </button>
-    )
+    );
   }
-  
-  buttonClass = `${givenClass}`
+
+  buttonClass = `${givenClass}`;
   return (
-    <button onClick={() => click(category)}
-            className={buttonClass}>
+    <button
+      onClick={() => click(category)}
+      className={buttonClass}>
       {text}
     </button>
-  )
-}
+  );
+};
 
-// Button.propTypes = {
-//   click: PropTypes.func.isRequired,
-//   text: PropTypes.string,
-//   favNum: PropTypes.number,
-//   setClass: PropTypes.string,
-//   card: PropTypes.object
-// }
+Button.propTypes = {
+  click: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  setClass: PropTypes.string,
+  givenClass: PropTypes.string,
+  category: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
+  cardInformation: PropTypes.object
+};
 
-export default Button
+export default Button;

@@ -138,45 +138,54 @@ class App extends Component {
           .then(fullyOperationalData => this.setState({
             fullyOperationalData: dataCleaner(fullyOperationalData)
           }));
-      })
+      });
   }
 
   getPersonData(personDatatoParse) {
-    if(personDatatoParse) {
+    if (personDatatoParse) {
       const completePerson = personDatatoParse.map( (person) => {
-        let incompletePerson ={name: person.name}
+        let incompletePerson ={name: person.name};
 
         return fetch(person.homeworld)
-        .then(homeworldUrl => homeworldUrl.json())
-          .then(planet => Object.assign(incompletePerson, {homeworld: planet.name, homeworldPopulation: planet.population}))
+          .then(homeworldUrl => homeworldUrl.json())
+          .then(planet => Object.assign(incompletePerson, {
+            homeworld: planet.name,
+            homeworldPopulation: planet.population
+          }))
           .then( getSpeciesData => {
-            const unresolvedSpeciesPromises = person.species.map( (speciesUrl) => {
-              return fetch(speciesUrl).then(speciesData => speciesData.json())
-            })
-            return Promise.all(unresolvedSpeciesPromises)
-            .then(resolvedSpecies => Object.assign(incompletePerson, {species: resolvedSpecies}))
-          })
-        })
+            const unresSpecPromies = person.species.map( (speciesUrl) => {
+              return fetch(speciesUrl).then(speciesData => speciesData.json());
+            });
+            return Promise.all(unresSpecPromies)
+              .then(resolvedSpecies =>
+                Object.assign(incompletePerson, {species: resolvedSpecies})
+              );
+          });
+      });
 
-      return Promise.all(completePerson).then(youCompleteMe => youCompleteMe )
+      return Promise.all(completePerson).then(youCompleteMe => youCompleteMe);
     }
   }
 
   getPlanetData(planetDataToParse) {
-    if(planetDataToParse) {
+    if (planetDataToParse) {
       const detailedPlanetData = planetDataToParse.map( (planets) => {
-        let incompletePlanet = {name: planets.name, terrain: planets.terrain, population: planets.population, climate: planets.climate}
+        let incompletePlanet = {
+          name: planets.name,
+          terrain: planets.terrain,
+          population: planets.population,
+          climate: planets.climate};
 
         const planetInhabitants = planets.residents.map( (planetUrl) => {
           return fetch(planetUrl).then(planetApiCall => planetApiCall.json())
-            .then(planetDwellers => planetDwellers)
-        })
+            .then(planetDwellers => planetDwellers);
+        });
 
         return Promise.all(planetInhabitants).then( inhabitant =>
           Object.assign(incompletePlanet, {residents: inhabitant})
-        )
-      })
-      return Promise.all(detailedPlanetData).then(planetData => planetData)
+        );
+      });
+      return Promise.all(detailedPlanetData).then(planetData => planetData);
     }
   }
 }

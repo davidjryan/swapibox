@@ -1,36 +1,42 @@
 import React from 'react';
-import Button from '../Button/Button'
-import './Card.css'
+import Button from '../Button/Button';
+import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
-    const cardKeys = Object.keys(cardInformation)
+  console.log(toggleFav);
+  const cardKeys = Object.keys(cardInformation);
 
-    const cardDetails = cardKeys.map( (discreteInfo) => {
-      if(discreteInfo !== 'Name' && 'favorite') {
-        return(
-          <div key={`${discreteInfo} - ${Date.now()}`}>
-            <p className="card-info-title">{discreteInfo}</p>
-            <p className="card-info-body">{cardInformation[discreteInfo]}</p>
-          </div>
-        );
-      }
-    })
+  const cardDetails = cardKeys.map( (discreteInfo) => {
+    if (discreteInfo !== 'Name' && 'favorite') {
+      return (
+        <div key={`${discreteInfo} - ${Date.now()}`}>
+          <p className="card-info-title">{discreteInfo}</p>
+          <p className="card-info-body">{cardInformation[discreteInfo]}</p>
+        </div>
+      );
+    }
+    return null;
+  });
 
-    return (
-      <div className="card">
-        <h2 className="card-title ">
-          {cardInformation.Name}
-          <Button givenClass={'favorite-button'} text="Yes" click={toggleFav} category={cardInformation} cardInformation={cardInformation}/>
-        </h2>
-        { cardDetails }
-      </div>
-    )
-}
+  return (
+    <div className="card">
+      <h2 className="card-title ">
+        {cardInformation.Name}
+        <Button
+          givenClass={'favorite-button'}
+          text="Yes" click={toggleFav}
+          category={cardInformation}
+          cardInformation={cardInformation}/>
+      </h2>
+      { cardDetails }
+    </div>
+  );
+};
 
-Card.PropTypes = {
-  cardData: PropTypes.object.isRequired,
-  // toggleFavorite: PropTypes.function.isRequired
-}
+Card.propTypes = {
+  cardInformation: PropTypes.object.isRequired,
+  toggleFav: PropTypes.func.isRequired
+};
 
 export default Card;
