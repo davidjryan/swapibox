@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should create an instance of a card container 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CardContainer
+    cardData={
+        Array [
+            Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "Galactic Basic",
+              "Name": "Luke Skywalker",
+              "Species": "Human",
+              "favorite": false,
+            },
+            Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "n/a",
+              "Name": "C-3PO",
+              "Species": "Droid",
+              "favorite": false,
+            },
+            Object {
+              "Homeworld": "Naboo",
+              "Homeworld Population": "4500000000",
+              "Language": "n/a",
+              "Name": "R2-D2",
+              "Species": "Droid",
+              "favorite": false,
+            },
+          ]
+    }
+    toggleFav={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          cardInformation={
+                    Object {
+                              "Homeworld": "Tatooine",
+                              "Homeworld Population": "200000",
+                              "Language": "Galactic Basic",
+                              "Name": "Luke Skywalker",
+                              "Species": "Human",
+                              "favorite": false,
+                            }
+          }
+          toggleFav={[Function]}
+/>,
+        <Card
+          cardInformation={
+                    Object {
+                              "Homeworld": "Tatooine",
+                              "Homeworld Population": "200000",
+                              "Language": "n/a",
+                              "Name": "C-3PO",
+                              "Species": "Droid",
+                              "favorite": false,
+                            }
+          }
+          toggleFav={[Function]}
+/>,
+        <Card
+          cardInformation={
+                    Object {
+                              "Homeworld": "Naboo",
+                              "Homeworld Population": "4500000000",
+                              "Language": "n/a",
+                              "Name": "R2-D2",
+                              "Species": "Droid",
+                              "favorite": false,
+                            }
+          }
+          toggleFav={[Function]}
+/>,
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Luke Skywalker - 0",
+        "nodeType": "function",
+        "props": Object {
+          "cardInformation": Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          },
+          "toggleFav": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "C-3PO - 1",
+        "nodeType": "function",
+        "props": Object {
+          "cardInformation": Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "n/a",
+            "Name": "C-3PO",
+            "Species": "Droid",
+            "favorite": false,
+          },
+          "toggleFav": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "R2-D2 - 2",
+        "nodeType": "function",
+        "props": Object {
+          "cardInformation": Object {
+            "Homeworld": "Naboo",
+            "Homeworld Population": "4500000000",
+            "Language": "n/a",
+            "Name": "R2-D2",
+            "Species": "Droid",
+            "favorite": false,
+          },
+          "toggleFav": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            cardInformation={
+                        Object {
+                                    "Homeworld": "Tatooine",
+                                    "Homeworld Population": "200000",
+                                    "Language": "Galactic Basic",
+                                    "Name": "Luke Skywalker",
+                                    "Species": "Human",
+                                    "favorite": false,
+                                  }
+            }
+            toggleFav={[Function]}
+/>,
+          <Card
+            cardInformation={
+                        Object {
+                                    "Homeworld": "Tatooine",
+                                    "Homeworld Population": "200000",
+                                    "Language": "n/a",
+                                    "Name": "C-3PO",
+                                    "Species": "Droid",
+                                    "favorite": false,
+                                  }
+            }
+            toggleFav={[Function]}
+/>,
+          <Card
+            cardInformation={
+                        Object {
+                                    "Homeworld": "Naboo",
+                                    "Homeworld Population": "4500000000",
+                                    "Language": "n/a",
+                                    "Name": "R2-D2",
+                                    "Species": "Droid",
+                                    "favorite": false,
+                                  }
+            }
+            toggleFav={[Function]}
+/>,
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Luke Skywalker - 0",
+          "nodeType": "function",
+          "props": Object {
+            "cardInformation": Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "Galactic Basic",
+              "Name": "Luke Skywalker",
+              "Species": "Human",
+              "favorite": false,
+            },
+            "toggleFav": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "C-3PO - 1",
+          "nodeType": "function",
+          "props": Object {
+            "cardInformation": Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "n/a",
+              "Name": "C-3PO",
+              "Species": "Droid",
+              "favorite": false,
+            },
+            "toggleFav": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "R2-D2 - 2",
+          "nodeType": "function",
+          "props": Object {
+            "cardInformation": Object {
+              "Homeworld": "Naboo",
+              "Homeworld Population": "4500000000",
+              "Language": "n/a",
+              "Name": "R2-D2",
+              "Species": "Droid",
+              "favorite": false,
+            },
+            "toggleFav": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

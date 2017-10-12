@@ -20,10 +20,7 @@ class App extends Component {
       return (
         <div className="App">
 
-          <header className="side-bar">
-            <Crawl films={this.state.fullyOperationalData[0]}/>
-          </header>
-
+          <Crawl films={this.state.fullyOperationalData[0]}/>
 
           <main className="content-container">
             <div className="title-container">

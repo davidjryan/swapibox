@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should create an instance of a button 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Button
+    cardInformation={
+        Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          }
+    }
+    category={
+        Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          }
+    }
+    click={[Function]}
+    givenClass="favorite-button nav-btn"
+    test=""
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": undefined,
+      "className": "favorite-button nav-btn",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": undefined,
+        "className": "favorite-button nav-btn",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
