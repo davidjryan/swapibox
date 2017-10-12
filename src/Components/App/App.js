@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       fullyOperationalData: [],
       displayData: 'people',
+      favoriteCards: []
     }
   }
 
@@ -43,15 +44,19 @@ class App extends Component {
             <div className="main-content-container">
               {
                 this.state.displayData === 'people' &&
-                <CardContainer cardData={this.state.fullyOperationalData[1]}/>
+                <CardContainer cardData={this.state.fullyOperationalData[1]} toggleFav={ this.toggleFav.bind(this) }/>
               }
               {
                 this.state.displayData === 'vehicles' &&
-                <CardContainer cardData={this.state.fullyOperationalData[3]}/>
+                <CardContainer cardData={this.state.fullyOperationalData[3]} toggleFav={ this.toggleFav.bind(this)}/>
               }
               {
                 this.state.displayData === 'planets' &&
-                <CardContainer cardData={this.state.fullyOperationalData[2]}/>
+                <CardContainer cardData={this.state.fullyOperationalData[2]} toggleFav={ this.toggleFav.bind(this)}/>
+              }
+              {
+                this.state.displayData === 'favorites' &&
+                <CardContainer cardData={this.state.favoriteCards} toggleFav={ this.toggleFav.bind(this)} />
               }
             </div>
 
@@ -67,31 +72,14 @@ class App extends Component {
     }
   }
 
-  showPlanets() {
-    // get planet data
-    // pass to cardcontainer
-  }
-
-  showVehicles() {
-    // get planet data
-    // pass to cardcontainer
-  }
-
   showData(category) {
-    const peopleData = this.state.fullyOperationalData[1];
     this.setState({
       displayData: category
     })
   }
 
-  showFavorites() {
-    // this.setState
-  }
-
   toggleFav(card) {
-    // grab favorite array
-    // add to favorite array
-    // reset state with edited array
+    console.log(card);
   }
 
   componentDidMount() {
