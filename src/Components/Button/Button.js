@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 const Button = ({ click, text, givenClass, category }) => {
   let buttonClass = `${givenClass} nav-btn`
 
-  //handle card selection
-
   return (
     <button onClick={() => click(category)}
             className={buttonClass}>
