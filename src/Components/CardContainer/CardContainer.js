@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const CardContainer = ({cardData, toggleFav}) => {
   const cardFormat = cardData.map( (item) => {
     return(
-      <Card cardInformation={ item } toggleFav={ toggleFav } key={`${item.name} - ${Date.now()}`} />
+      <Card cardInformation={ item } toggleFav={ toggleFav } key={`${item.Name} - ${Date.now()}`} />
     )
   })
   return (

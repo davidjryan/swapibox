@@ -21,7 +21,7 @@ class App extends Component {
         <div className="App">
 
             <header className="side-bar">
-              {/* <Crawl films={this.state.films}/> */}
+              <Crawl films={this.state.fullyOperationalData[0]}/>
             </header>
 
 
@@ -79,6 +79,7 @@ class App extends Component {
   }
 
   toggleFav(card) {
+    console.log(card);
     let favoredCards = [];
     favoredCards.push(card);
     this.setState({
