@@ -4,11 +4,10 @@ import './CardContainer.css'
 import PropTypes from 'prop-types';
 
 const CardContainer = ({cardData, toggleFavorite}) => {
-  const cardFormat = () => {
-    <div className="card-container">
-      <Card />
-    </div>
-  }
+
+  const cardFormat = cardData.map( (item) => {
+    <Card cardInformation={ item } />
+  })
 
   return (
     <div className="card-container">

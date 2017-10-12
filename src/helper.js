@@ -1,6 +1,5 @@
 export default function dataCleaner(dataObject) {
 
-  console.log(dataObject[0]);
   const films = dataObject[0].map( filmData =>
     Object.assign({title: filmData.title, releaseYear: filmData.release_date, crawlText: filmData.opening_crawl, episodeNum: filmData.episode_id}));
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
-import Card from '../Card/Card'
+import CardContainer from '../CardContainer/CardContainer'
 import Button from '../Button/Button'
 
 
@@ -15,41 +15,48 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.fullyOperationalData.length) {
     return (
-      <div className="App">
-        {
-          this.state.fullyOperationalData.length &&
-          <header className="side-bar">
-            {/* <Crawl films={this.state.films}/> */}
-          </header>
-        }
+        <div className="App">
 
-        <main className="content-container">
-          <div className="title-container">
-            <h1 className="page-title">SWapi-Box</h1>
-            <div className="btns">
+            <header className="side-bar">
+              {/* <Crawl films={this.state.films}/> */}
+            </header>
+
+
+          <main className="content-container">
+            <div className="title-container">
+              <h1 className="page-title">SWapi-Box</h1>
+              <div className="btns">
+
+                  <Button givenClass={'people-btn'}
+                    click={ this.showData.bind(this)} text='People' category='people' />
+                  <Button givenClass={'vehicle-btn'}
+                    click={ this.showData.bind(this)} text='Vehicles' category='vehicles' />
+                  <Button givenClass={'planet-btn'}
+                    click={ this.showData.bind(this)} text='Planets' category='planets' />
+                  <Button givenClass={'favorites-btn'}
+                    click={ this.showData.bind(this)} text='Favorites' category='favorites' />
+
+              </div>
+            </div>
+            <div className="main-content-container">
               {
-                this.state.fullyOperationalData.length &&
-                <Button givenClass={'people-btn'}
-                  click={ this.showPeople.bind(this)} text='People' btnNum='1' />
+                this.state.displayData === 'people' &&
+                <CardContainer cardData={this.state.fullyOperationalData[1]}/>
               }
-              {/* <Button givenClass={'planet-btn'}
-                click={ showPlanets } />
-              <Button givenClass={'vehicle-btn'}
-                click={ showVehicles } />
-              <Button givenClass={'favorite-btn'}
-                click={ showFavorites } favLength={ favLength }/> */}
             </div>
-          </div>
-          <div className="main-content-container">
-            <div className="card-container">
-              <Card />
-            </div>
-          </div>
 
-        </main>
-      </div>
-    );
+          </main>
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          Hell Yes
+        </div>
+      )
+    }
   }
 
   showPlanets() {
@@ -62,9 +69,11 @@ class App extends Component {
     // pass to cardcontainer
   }
 
-  showPeople(category) {
+  showData(category) {
     const peopleData = this.state.fullyOperationalData[1];
-    console.log(category);
+    this.setState({
+      displayData: category
+    })
   }
 
   showFavorites() {
