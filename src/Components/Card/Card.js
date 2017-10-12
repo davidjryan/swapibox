@@ -3,30 +3,28 @@ import Button from '../Button/Button'
 import './Card.css'
 import PropTypes from 'prop-types';
 
-const Card = ({cardData, toggleFavorite}) => {
+const Card = ({ cardInformation, toggleFavorite }) => {
 
-  const cardFormat = () => {
-    // return people format
+    const cardKeys = Object.keys(cardInformation)
 
-    // or
+    const cardDetails = cardKeys.map( (discreteInfo) => {
+      if(discreteInfo !== 'name') {
+        return(
+          <div>
+            <p className="card-info-title">{discreteInfo}</p>
+            <p className="card-info-body">{cardInformation[discreteInfo]}</p>
+          </div>
+        );
+      }
+    })
 
-    //return planet format
-
-    // or
-
-    //return vehicle format
-  }
     return (
       <div className="card">
         <h2 className="card-title">
-          Luke Skywalker
-          <Button className="favorite-button"
-                  />
+          {cardInformation.name}
+          <Button className="favorite-button" />
         </h2>
-        <p>Homeworld</p>
-        <p>Species</p>
-        <p>Language</p>
-        <p>Population</p>
+        { cardDetails }
       </div>
     )
 }

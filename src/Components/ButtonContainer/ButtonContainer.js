@@ -3,20 +3,19 @@ import './ButtonContainer.css';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 
-const ButtonContainer = ({showPeople, showPlanets, showVehicles, showFavorites, favLength}) => {
+const ButtonContainer({showPeople, showPlanets, showVehicles, showFavorites, favLength}) => {
 
-  return (
+
+  render(
       <div className="btns">
         <Button givenClass={'people-btn'}
-          clickEvent={ showPeople } />
+          click={ showPeople } />
         <Button givenClass={'planet-btn'}
-          clickEvent={ showPlanets } />
+          click={ showPlanets } />
         <Button givenClass={'vehicle-btn'}
-          clickEvent={ showVehicles } />
+          click={ showVehicles } />
         <Button givenClass={'favorite-btn'}
-          clickEvent={ showFavorites } favLength={ favLength }/>
+          click={ showFavorites } favLength={ favLength }/>
       </div>
      )
 }
-
-export default ButtonContainer
