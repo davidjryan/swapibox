@@ -8,7 +8,7 @@ const Card = ({ cardInformation, toggleFav }) => {
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
-    if (discreteInfo !== 'Name' && 'favorite') {
+    if (discreteInfo !== 'Name' && discreteInfo !== 'favorite') {
       return (
         <div key={`${discreteInfo} - ${Date.now()}`}>
           <p className="card-info-title">{discreteInfo}</p>
