@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poller One', serif;
+  font-weight: bold;
+  background: #585858;
+  width: 200px;
+  margin: 5px;
+  border-radius: 5px; }
+
+hr {
+  margin: 5px; }
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 #734F51; }
+
+hr {
+  border: 2px solid #191A21; }

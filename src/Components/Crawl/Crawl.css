@@ -1,0 +1,39 @@
+.side-bar {
+  background-color: #000000;
+  bottom: 0;
+  color: #FDFFDB;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-right: auto;
+  overflow: hidden;
+  perspective: 350px;
+  position: fixed;
+  text-align: justify;
+  top: 0;
+  width: 350px; }
+
+.side-bar aside {
+  background-color: black; }
+
+.crawl {
+  position: fixed;
+  top: 99999px;
+  transform-origin: 50% 100%;
+  animation: crawl 120s linear; }
+
+.crawl-title {
+  font-size: 2.5em;
+  color: #e5b13a; }
+
+.crawl-text {
+  font-size: 1.2em;
+  color: #e5b13a; }
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(20deg) translateZ(0); }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px); } }
