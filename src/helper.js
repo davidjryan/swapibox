@@ -39,5 +39,5 @@ export default function dataCleaner(dataObject) {
     }));
 
 
-  return ([films, people, planets, vehicles])
+  return ([films, people, planets, vehicles]);
 }
