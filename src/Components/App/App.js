@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import dataCleaner from '../../helper'
 import Crawl from '../Crawl/Crawl'
-// import ViewFavorites from '../ViewFavorites/ViewFavorites'
 import Card from '../Card/Card'
-import ButtonContainer from '../ButtonContainer/ButtonContainer'
+import Button from '../Button/Button'
 
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      fullyOperationalData: []
-
+      fullyOperationalData: [],
+      displayData: 'people'
     }
   }
 
@@ -19,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.state.fullyOperationalData &&
+          this.state.fullyOperationalData.length &&
           <header className="side-bar">
             {/* <Crawl films={this.state.films}/> */}
           </header>
@@ -28,7 +27,19 @@ class App extends Component {
         <main className="content-container">
           <div className="title-container">
             <h1 className="page-title">SWapi-Box</h1>
-            <ButtonContainer />
+            <div className="btns">
+              {
+                this.state.fullyOperationalData.length &&
+                <Button givenClass={'people-btn'}
+                  click={ this.showPeople.bind(this)} text='People' btnNum='1' />
+              }
+              {/* <Button givenClass={'planet-btn'}
+                click={ showPlanets } />
+              <Button givenClass={'vehicle-btn'}
+                click={ showVehicles } />
+              <Button givenClass={'favorite-btn'}
+                click={ showFavorites } favLength={ favLength }/> */}
+            </div>
           </div>
           <div className="main-content-container">
             <div className="card-container">
@@ -42,15 +53,18 @@ class App extends Component {
   }
 
   showPlanets() {
-    // this.setState
+    // get planet data
+    // pass to cardcontainer
   }
 
   showVehicles() {
-    // this.setState
+    // get planet data
+    // pass to cardcontainer
   }
 
-  showPeople() {
-    // this.setState
+  showPeople(category) {
+    const peopleData = this.state.fullyOperationalData[1];
+    console.log(category);
   }
 
   showFavorites() {
