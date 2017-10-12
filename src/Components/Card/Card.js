@@ -23,7 +23,6 @@ const Card = ({ cardInformation, toggleFav }) => {
       <h2 className="card-title ">
         {cardInformation.Name}
       </h2>
-      <hr />
       <Button
         givenClass={'favorite-button'}
         text="" click={toggleFav}

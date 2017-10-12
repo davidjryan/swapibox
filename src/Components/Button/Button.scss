@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 button {
-  border: 1px solid $body-light;
   border-radius : 4px;
   font-size: 16px;
   padding: 10px;
@@ -12,9 +11,11 @@ button {
   background-color: $text-light;
   color: $body-dark;
   background: url(../../Assets/Rebel_Alliance_logo_black.svg);
-  background-repeat: none;
   background-size: cover;
   height: 160px;
+  width: 160px;
+  border-style: none;
+  display: inline-block;
 }
 
 .favorite-button:hover {
@@ -27,4 +28,8 @@ button {
 .activeBtn {
   background-color: $body-dark;
   color: $text-light;
+}
+
+.favorites-btn {
+  border: 1px solid $body-light;
 }
