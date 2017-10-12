@@ -3,8 +3,8 @@ import Button from '../Button/Button'
 import './Card.css'
 import PropTypes from 'prop-types';
 
-const Card = ({ cardInformation, toggleFavorite }) => {
-
+const Card = ({ cardInformation, toggleFav }) => {
+    console.log(toggleFav);
     const cardKeys = Object.keys(cardInformation)
 
     const cardDetails = cardKeys.map( (discreteInfo) => {
@@ -22,7 +22,7 @@ const Card = ({ cardInformation, toggleFavorite }) => {
       <div className="card">
         <h2 className="card-title">
           {cardInformation.name}
-          <Button className="favorite-button" />
+          <Button className="favorite-button" text="&#x2606;" toggleFav={ toggleFav }/>
         </h2>
         { cardDetails }
       </div>
