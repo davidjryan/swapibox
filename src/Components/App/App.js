@@ -101,7 +101,7 @@ class App extends Component {
       return 'activeBtn';
     } else {
       return '';
-    };
+    }
   }
 
   showData(category) {
@@ -111,9 +111,6 @@ class App extends Component {
   }
 
   toggleFav(card) {
-    console.log(card);
-    // let favoredCards = [];
-    // favoredCards.push(card);
     this.setState({
       favoriteCards: [...this.state.favoriteCards, card]
     });

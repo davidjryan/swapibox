@@ -1,5 +1,4 @@
 button {
-  border: 1px solid #734F51;
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
@@ -9,9 +8,11 @@ button {
   background-color: #FDFFDB;
   color: #3F0E10;
   background: url(../../Assets/Rebel_Alliance_logo_black.svg);
-  background-repeat: none;
   background-size: cover;
-  height: 160px; }
+  height: 160px;
+  width: 160px;
+  border-style: none;
+  display: inline-block; }
 
 .favorite-button:hover {
   background: url(../../Assets/Rebel_Alliance_logo_white.svg);
@@ -22,3 +23,6 @@ button {
 .activeBtn {
   background-color: #3F0E10;
   color: #FDFFDB; }
+
+.favorites-btn {
+  border: 1px solid #734F51; }

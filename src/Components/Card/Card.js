@@ -4,7 +4,6 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
-  console.log(toggleFav);
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
@@ -24,7 +23,6 @@ const Card = ({ cardInformation, toggleFav }) => {
       <h2 className="card-title ">
         {cardInformation.Name}
       </h2>
-      <hr />
       <Button
         givenClass={'favorite-button'}
         text="" click={toggleFav}

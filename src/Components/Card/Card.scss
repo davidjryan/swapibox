@@ -3,10 +3,11 @@
 .card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: 'Poller One', serif;
   font-weight: bold;
   background: $body-medium;
-  width: 200px;
+  width: 350px;
   margin: 5px;
   border-radius: 5px;
 }
@@ -17,7 +18,16 @@ hr {
 .card:hover {
   box-shadow: 0 8px 16px 0 $body-light;
 }
+.card-info-title {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
 
-hr {
-  border: 2px solid $text-dark;
+.card-title {
+  border-bottom: 2px solid $text-dark;
+  display: block;
+  width: 100%;
+  margin-bottom: 0px;
+  padding-bottom: 15px;
 }
