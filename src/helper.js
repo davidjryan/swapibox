@@ -5,7 +5,7 @@ export default function dataCleaner(dataObject) {
       title: filmData.title,
       releaseYear: filmData.release_date,
       crawlText: filmData.opening_crawl,
-      episodeNum: filmData.episode_id,
+      episodeNum: filmData.episode_id
     }));
 
   const people = dataObject[1].map( peopleData =>

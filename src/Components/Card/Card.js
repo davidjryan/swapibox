@@ -4,7 +4,6 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
-  console.log(toggleFav);
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
