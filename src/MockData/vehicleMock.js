@@ -1,5 +1,5 @@
 module.exports = [
-  [
+
     {
       Class: "wheeled",
       Model: "Digger Crawler",
@@ -20,6 +20,6 @@ module.exports = [
       Name: "Sand Crawler",
       Passengers: "30",
       favorite: false
-    }    
-  ]
+    }
+
 ];

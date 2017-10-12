@@ -40,3 +40,5 @@ export default function dataCleaner(dataObject) {
 
   return ([films, people, planets, vehicles]);
 }
+
+// export default

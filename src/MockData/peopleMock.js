@@ -1,5 +1,5 @@
 module.exports = [
-  [
+
     {
       Name: "Luke Skywalker",
       Species: "Human",
@@ -24,5 +24,5 @@ module.exports = [
       Homeworld: "Naboo",
       favorite: false
     }
-  ]
+
 ];

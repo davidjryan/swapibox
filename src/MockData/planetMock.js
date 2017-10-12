@@ -1,5 +1,5 @@
 module.exports = [
-  [
+
     {
       Climate: "temperate",
       Name:  "Alderaan",
@@ -24,5 +24,5 @@ module.exports = [
       Terrain: "jungle, rainforests",
       favorite: false
     }
-  ]
+
 ];

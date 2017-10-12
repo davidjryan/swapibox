@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should create an instance of a card 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    cardInformation={
+        Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          }
+    }
+    toggleFav={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="card-title "
+>
+          Luke Skywalker
+</h2>,
+        <Button
+          cardInformation={
+                    Object {
+                              "Homeworld": "Tatooine",
+                              "Homeworld Population": "200000",
+                              "Language": "Galactic Basic",
+                              "Name": "Luke Skywalker",
+                              "Species": "Human",
+                              "favorite": false,
+                            }
+          }
+          category={
+                    Object {
+                              "Homeworld": "Tatooine",
+                              "Homeworld Population": "200000",
+                              "Language": "Galactic Basic",
+                              "Name": "Luke Skywalker",
+                              "Species": "Human",
+                              "favorite": false,
+                            }
+          }
+          click={[Function]}
+          givenClass="favorite-button"
+          text=""
+/>,
+        Array [
+          null,
+          <div>
+            <p
+                        className="card-info-title"
+            >
+                        Species
+            </p>
+            <p
+                        className="card-info-body"
+            >
+                        Human
+            </p>
+</div>,
+          <div>
+            <p
+                        className="card-info-title"
+            >
+                        Language
+            </p>
+            <p
+                        className="card-info-body"
+            >
+                        Galactic Basic
+            </p>
+</div>,
+          <div>
+            <p
+                        className="card-info-title"
+            >
+                        Homeworld Population
+            </p>
+            <p
+                        className="card-info-body"
+            >
+                        200000
+            </p>
+</div>,
+          <div>
+            <p
+                        className="card-info-title"
+            >
+                        Homeworld
+            </p>
+            <p
+                        className="card-info-body"
+            >
+                        Tatooine
+            </p>
+</div>,
+          null,
+        ],
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Luke Skywalker",
+          "className": "card-title ",
+        },
+        "ref": null,
+        "rendered": "Luke Skywalker",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "function",
+        "props": Object {
+          "cardInformation": Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          },
+          "category": Object {
+            "Homeworld": "Tatooine",
+            "Homeworld Population": "200000",
+            "Language": "Galactic Basic",
+            "Name": "Luke Skywalker",
+            "Species": "Human",
+            "favorite": false,
+          },
+          "click": [Function],
+          "givenClass": "favorite-button",
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      null,
+      Object {
+        "instance": null,
+        "key": "Species - Luke Skywalker",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="card-info-title"
+>
+              Species
+</p>,
+            <p
+              className="card-info-body"
+>
+              Human
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Species",
+              "className": "card-info-title",
+            },
+            "ref": null,
+            "rendered": "Species",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Human",
+              "className": "card-info-body",
+            },
+            "ref": null,
+            "rendered": "Human",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Language - Luke Skywalker",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="card-info-title"
+>
+              Language
+</p>,
+            <p
+              className="card-info-body"
+>
+              Galactic Basic
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Language",
+              "className": "card-info-title",
+            },
+            "ref": null,
+            "rendered": "Language",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Galactic Basic",
+              "className": "card-info-body",
+            },
+            "ref": null,
+            "rendered": "Galactic Basic",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Homeworld Population - Luke Skywalker",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="card-info-title"
+>
+              Homeworld Population
+</p>,
+            <p
+              className="card-info-body"
+>
+              200000
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Homeworld Population",
+              "className": "card-info-title",
+            },
+            "ref": null,
+            "rendered": "Homeworld Population",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "200000",
+              "className": "card-info-body",
+            },
+            "ref": null,
+            "rendered": "200000",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Homeworld - Luke Skywalker",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="card-info-title"
+>
+              Homeworld
+</p>,
+            <p
+              className="card-info-body"
+>
+              Tatooine
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Homeworld",
+              "className": "card-info-title",
+            },
+            "ref": null,
+            "rendered": "Homeworld",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Tatooine",
+              "className": "card-info-body",
+            },
+            "ref": null,
+            "rendered": "Tatooine",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      null,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="card-title "
+>
+            Luke Skywalker
+</h2>,
+          <Button
+            cardInformation={
+                        Object {
+                                    "Homeworld": "Tatooine",
+                                    "Homeworld Population": "200000",
+                                    "Language": "Galactic Basic",
+                                    "Name": "Luke Skywalker",
+                                    "Species": "Human",
+                                    "favorite": false,
+                                  }
+            }
+            category={
+                        Object {
+                                    "Homeworld": "Tatooine",
+                                    "Homeworld Population": "200000",
+                                    "Language": "Galactic Basic",
+                                    "Name": "Luke Skywalker",
+                                    "Species": "Human",
+                                    "favorite": false,
+                                  }
+            }
+            click={[Function]}
+            givenClass="favorite-button"
+            text=""
+/>,
+          Array [
+            null,
+            <div>
+              <p
+                            className="card-info-title"
+              >
+                            Species
+              </p>
+              <p
+                            className="card-info-body"
+              >
+                            Human
+              </p>
+</div>,
+            <div>
+              <p
+                            className="card-info-title"
+              >
+                            Language
+              </p>
+              <p
+                            className="card-info-body"
+              >
+                            Galactic Basic
+              </p>
+</div>,
+            <div>
+              <p
+                            className="card-info-title"
+              >
+                            Homeworld Population
+              </p>
+              <p
+                            className="card-info-body"
+              >
+                            200000
+              </p>
+</div>,
+            <div>
+              <p
+                            className="card-info-title"
+              >
+                            Homeworld
+              </p>
+              <p
+                            className="card-info-body"
+              >
+                            Tatooine
+              </p>
+</div>,
+            null,
+          ],
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Luke Skywalker",
+            "className": "card-title ",
+          },
+          "ref": null,
+          "rendered": "Luke Skywalker",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "cardInformation": Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "Galactic Basic",
+              "Name": "Luke Skywalker",
+              "Species": "Human",
+              "favorite": false,
+            },
+            "category": Object {
+              "Homeworld": "Tatooine",
+              "Homeworld Population": "200000",
+              "Language": "Galactic Basic",
+              "Name": "Luke Skywalker",
+              "Species": "Human",
+              "favorite": false,
+            },
+            "click": [Function],
+            "givenClass": "favorite-button",
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": "Species - Luke Skywalker",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="card-info-title"
+>
+                Species
+</p>,
+              <p
+                className="card-info-body"
+>
+                Human
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Species",
+                "className": "card-info-title",
+              },
+              "ref": null,
+              "rendered": "Species",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Human",
+                "className": "card-info-body",
+              },
+              "ref": null,
+              "rendered": "Human",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Language - Luke Skywalker",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="card-info-title"
+>
+                Language
+</p>,
+              <p
+                className="card-info-body"
+>
+                Galactic Basic
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Language",
+                "className": "card-info-title",
+              },
+              "ref": null,
+              "rendered": "Language",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Galactic Basic",
+                "className": "card-info-body",
+              },
+              "ref": null,
+              "rendered": "Galactic Basic",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Homeworld Population - Luke Skywalker",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="card-info-title"
+>
+                Homeworld Population
+</p>,
+              <p
+                className="card-info-body"
+>
+                200000
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Homeworld Population",
+                "className": "card-info-title",
+              },
+              "ref": null,
+              "rendered": "Homeworld Population",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "200000",
+                "className": "card-info-body",
+              },
+              "ref": null,
+              "rendered": "200000",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Homeworld - Luke Skywalker",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="card-info-title"
+>
+                Homeworld
+</p>,
+              <p
+                className="card-info-body"
+>
+                Tatooine
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Homeworld",
+                "className": "card-info-title",
+              },
+              "ref": null,
+              "rendered": "Homeworld",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tatooine",
+                "className": "card-info-body",
+              },
+              "ref": null,
+              "rendered": "Tatooine",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        null,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
