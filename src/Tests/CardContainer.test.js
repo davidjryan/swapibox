@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CardContainer from '../Components/CardContainer/CardContainer';
 import peopleMock from '../MockData/peopleMock';
 
@@ -14,5 +13,5 @@ describe('CardContainer', () => {
     />);
 
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

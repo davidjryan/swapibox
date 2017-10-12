@@ -7,7 +7,7 @@ const Crawl = ({ films }) => {
     return film.episodeNum === randomNumber;
   });
   return (
-    <div class="crawl-container">
+    <div className="crawl-container">
       <aside className="side-bar">
         <div className="crawl">
           <h2 className="crawl-title">{movieCrawl.title}</h2>

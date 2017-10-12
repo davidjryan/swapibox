@@ -91,7 +91,8 @@
 //     expect(wrapper).toBeDefined();
 //   });
 //
-//   // it('should not display its card container components by default', () => {
+//   // it('should not display its card container components by default',
+//       () => {
 //   //   const wrapper = shallow(<App />)
 //   //
 //   //   expect(wrapper.find('CardContainer').length).toEqual(0)

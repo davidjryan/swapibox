@@ -4,12 +4,12 @@ import './CardContainer.css';
 import PropTypes from 'prop-types';
 
 const CardContainer = ({cardData, toggleFav}) => {
-  const cardFormat = cardData.map( (item, i) => {
+  const cardFormat = cardData.map( (item, index) => {
     return (
       <Card
         cardInformation={ item }
         toggleFav={ toggleFav }
-        key={`${item.Name} - ${i}`} />
+        key={`${item.Name} - ${index}`} />
     );
   });
   return (
