@@ -1,6 +1,10 @@
 @import "./Components/App/App.css";
 @import "./Components/Crawl/Crawl.css";
-
+@import "./Components/Card/Card.css";
+@import "./Components/Button/Button.css";
+@import "./Components/CardContainer/CardContainer.css";
+@import "./variables.css";
+@import "https://fonts.googleapis.com/css?family=Poller+One"
 
 body {
   margin: 0;

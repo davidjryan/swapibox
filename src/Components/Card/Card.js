@@ -23,12 +23,13 @@ const Card = ({ cardInformation, toggleFav }) => {
     <div className="card">
       <h2 className="card-title ">
         {cardInformation.Name}
-        <Button
-          givenClass={'favorite-button'}
-          text="Yes" click={toggleFav}
-          category={cardInformation}
-          cardInformation={cardInformation}/>
       </h2>
+      <hr />
+      <Button
+        givenClass={'favorite-button'}
+        text="" click={toggleFav}
+        category={cardInformation}
+        cardInformation={cardInformation}/>
       { cardDetails }
     </div>
   );

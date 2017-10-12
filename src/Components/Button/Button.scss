@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+button {
+  border: 1px solid $body-light;
+  border-radius : 4px;
+  font-size: 16px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.favorite-button {
+  background-color: $text-light;
+  color: $body-dark;
+  background: url(../../Assets/Rebel_Alliance_logo_black.svg);
+  background-repeat: none;
+  background-size: cover;
+  height: 160px;
+}
+
+.favorite-button:hover {
+  background: url(../../Assets/Rebel_Alliance_logo_white.svg);
+  background-repeat: none;
+  background-size: cover;
+  background-color: none;
+}
+
+.activeBtn {
+  background-color: $body-dark;
+  color: $text-light;
+}

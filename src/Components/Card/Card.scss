@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poller One', serif;
+  font-weight: bold;
+  background: $body-medium;
+  width: 200px;
+  margin: 5px;
+  border-radius: 5px;
+}
+hr {
+  margin: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 $body-light;
+}
+
+hr {
+  border: 2px solid $text-dark;
+}
