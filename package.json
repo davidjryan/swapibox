@@ -17,5 +17,11 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "fetch-mock": "^5.13.1",
+    "react-test-renderer": "^16.0.0"
   }
 }
