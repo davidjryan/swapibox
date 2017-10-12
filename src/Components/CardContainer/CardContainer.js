@@ -20,7 +20,7 @@ const CardContainer = ({cardData, toggleFav}) => {
 };
 
 CardContainer.propTypes = {
-  cardData: PropTypes.object.isRequired,
+  cardData: PropTypes.array.isRequired,
   toggleFav: PropTypes.func.isRequired
 };
 
