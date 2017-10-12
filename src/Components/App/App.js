@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       fullyOperationalData: [],
-      displayData: 'people'
+      displayData: 'people',
     }
   }
 
@@ -45,12 +45,20 @@ class App extends Component {
                 this.state.displayData === 'people' &&
                 <CardContainer cardData={this.state.fullyOperationalData[1]}/>
               }
+              {
+                this.state.displayData === 'vehicles' &&
+                <CardContainer cardData={this.state.fullyOperationalData[3]}/>
+              }
+              {
+                this.state.displayData === 'planets' &&
+                <CardContainer cardData={this.state.fullyOperationalData[2]}/>
+              }
             </div>
 
           </main>
         </div>
-      );
-    } else {
+        );
+      } else {
       return (
         <div className="App">
           Hell Yes

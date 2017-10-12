@@ -6,9 +6,11 @@ import PropTypes from 'prop-types';
 const CardContainer = ({cardData, toggleFavorite}) => {
 
   const cardFormat = cardData.map( (item) => {
-    <Card cardInformation={ item } />
+    return(
+      <Card cardInformation={ item } />
+    )
   })
-
+  console.log(cardFormat);
   return (
     <div className="card-container">
       { cardFormat }
