@@ -4,13 +4,13 @@ import './Card.css'
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
-    console.log(toggleFav);
     const cardKeys = Object.keys(cardInformation)
+    const buttonClass = !cardInformation.favorite ? "favorite-button" : "favorite-button selected-favorite"
 
     const cardDetails = cardKeys.map( (discreteInfo) => {
-      if(discreteInfo !== 'name') {
+      if(discreteInfo !== 'Name' && 'favorite') {
         return(
-          <div>
+          <div key={`${discreteInfo} - ${Date.now()}`}>
             <p className="card-info-title">{discreteInfo}</p>
             <p className="card-info-body">{cardInformation[discreteInfo]}</p>
           </div>
@@ -20,9 +20,9 @@ const Card = ({ cardInformation, toggleFav }) => {
 
     return (
       <div className="card">
-        <h2 className="card-title">
-          {cardInformation.name}
-          <Button className="favorite-button" text="&#x2606;" toggleFav={ toggleFav }/>
+        <h2 className="card-title ">
+          {cardInformation.Name}
+          <Button className={buttonClass} text="../../Assets.rebel-blank.png" click={toggleFav} category={cardInformation}/>
         </h2>
         { cardDetails }
       </div>
