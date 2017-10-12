@@ -2,14 +2,24 @@ import React from 'react';
 import './Button.css';
 import PropTypes from 'prop-types';
 
-const Button = ({ click, text, givenClass, category }) => {
-  let buttonClass = `${givenClass} nav-btn`
-
+const Button = ({ click, text, givenClass, category, cardInformation }) => {
+  let buttonClass;
+  console.log(cardInformation);
+  if(!cardInformation) {
+    buttonClass = `${givenClass} nav-btn`
+    return (
+      <button onClick={() => click(category)}
+              className={buttonClass}>
+        {text}
+      </button>
+    )
+  }
+  
+  buttonClass = `${givenClass}`
   return (
     <button onClick={() => click(category)}
             className={buttonClass}>
       {text}
-      {/* {favNum} */}
     </button>
   )
 }

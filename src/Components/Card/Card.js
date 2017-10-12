@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
     const cardKeys = Object.keys(cardInformation)
-    const buttonClass = !cardInformation.favorite ? "favorite-button" : "favorite-button selected-favorite"
 
     const cardDetails = cardKeys.map( (discreteInfo) => {
       if(discreteInfo !== 'Name' && 'favorite') {
@@ -22,7 +21,7 @@ const Card = ({ cardInformation, toggleFav }) => {
       <div className="card">
         <h2 className="card-title ">
           {cardInformation.Name}
-          <Button className={buttonClass} text="../../Assets.rebel-blank.png" click={toggleFav} category={cardInformation}/>
+          <Button givenClass={'favorite-button'} text="Yes" click={toggleFav} category={cardInformation} cardInformation={cardInformation}/>
         </h2>
         { cardDetails }
       </div>
