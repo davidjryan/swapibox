@@ -31,22 +31,22 @@ class App extends Component {
               <div className="btns">
 
                 <Button
-                  givenClass={'people-btn'}
+                  givenClass={this.activeCategory(this.state.displayData, 'people') + ' people-btn'}
                   click={ this.showData.bind(this)}
                   text='People'
                   category='people' />
                 <Button
-                  givenClass={'vehicle-btn'}
+                  givenClass={this.activeCategory(this.state.displayData, 'vehicles') + ' vehicles-btn'}
                   click={ this.showData.bind(this)}
                   text='Vehicles'
                   category='vehicles' />
                 <Button
-                  givenClass={'planet-btn'}
+                  givenClass={this.activeCategory(this.state.displayData, 'planets') + ' planets-btn'}
                   click={ this.showData.bind(this)}
                   text='Planets'
                   category='planets' />
                 <Button
-                  givenClass={'favorites-btn'}
+                  givenClass={this.activeCategory(this.state.displayData, 'favorites') + ' favorites-btn'}
                   click={ this.showData.bind(this)}
                   text='Favorites'
                   category='favorites' />
@@ -92,8 +92,12 @@ class App extends Component {
     }
   }
 
-  activeCategory() {
-
+  activeCategory(display, button) {
+    if(display === button) {
+      return 'activeBtn'
+    } else {
+      return ''
+    }
   }
 
   showData(category) {
