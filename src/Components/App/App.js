@@ -10,17 +10,19 @@ class App extends Component {
     super();
     this.state = {
       fullyOperationalData: [],
-      displayData: 'people',
-      favoriteCards: []
+      displayData: 'film',
+      favoriteCards: [],
+      filmData: [],
+      vehicleData: []
     };
   }
 
   render() {
-    if (this.state.fullyOperationalData.length) {
+    if (this.state.filmData.length) {
       return (
         <div className="App">
 
-          <Crawl films={this.state.fullyOperationalData[0]}/>
+          <Crawl films={this.state.filmData}/>
 
           <main className="content-container">
             <div className="title-container">
@@ -36,7 +38,7 @@ class App extends Component {
                 <Button
                   givenClass={this.activeCategory(this.state.displayData,
                     'vehicles') + ' vehicles-btn'}
-                  click={ this.showData.bind(this)}
+                  click={ this.fetchVehicleData.bind(this) }
                   text='Vehicles'
                   category='vehicles' />
                 <Button
@@ -64,7 +66,7 @@ class App extends Component {
               {
                 this.state.displayData === 'vehicles' &&
                 <CardContainer
-                  cardData={this.state.fullyOperationalData[3]}
+                  cardData={this.state.vehicleData}
                   toggleFav={ this.toggleFav.bind(this)}/>
               }
               {
@@ -101,6 +103,11 @@ class App extends Component {
     }
   }
 
+  fetchData(incomingUrl) {
+    return fetch(incomingUrl)
+      .then(fetchedData => fetchedData.json())
+  }
+
   showData(category) {
     this.setState({
       displayData: category
@@ -114,18 +121,44 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let unresolvedPromises = [];
-    const films = fetch('https://swapi.co/api/films/')
-      .then(filmData => filmData.json());
-    const people = fetch('https://swapi.co/api/people/')
-      .then(peopleData => peopleData.json());
-    const planets = fetch('https://swapi.co/api/planets/')
-      .then(planetData => planetData.json());
-    const vehicles = fetch('https://swapi.co/api/vehicles/')
-      .then(vehicleData => vehicleData.json());
+    this.fetchFilmData()
+    // let unresolvedPromises = [];
+    // const films = fetch('https://swapi.co/api/films/')
+    //   .then(filmData => filmData.json());
+    // const people = fetch('https://swapi.co/api/people/')
+    //   .then(peopleData => peopleData.json());
+    // const planets = fetch('https://swapi.co/api/planets/')
+    //   .then(planetData => planetData.json());
+    // const vehicles = fetch('https://swapi.co/api/vehicles/')
+    //   .then(vehicleData => vehicleData.json());
+    //
+    // unresolvedPromises.push(films, people, planets, vehicles);
+    // this.resolvePromises(unresolvedPromises);
+  }
 
-    unresolvedPromises.push(films, people, planets, vehicles);
-    this.resolvePromises(unresolvedPromises);
+
+
+  fetchFilmData() {
+    const filmUrl = 'https://swapi.co/api/films';
+    const fetchedFilmData = this.fetchData(filmUrl).then(unresolvedPromise => {
+      return unresolvedPromise.results
+    }).then(response => this.setState({
+      filmData: dataCleaner(response)
+    }));
+  }
+
+  fetchVehicleData() {
+    if(this.state.vehicleData.length === 0) {
+      const vehicleUrl = 'https://swapi.co/api/vehicles';
+      const fetchedVehicleData = this.fetchData(vehicleUrl).then(unresolvedPromise => {
+        return unresolvedPromise.results
+      }).then(response => this.setState({
+        vehicleData: dataCleaner(response)
+      }));
+    }
+    this.setState({
+      displayData: 'vehicles'
+    })
   }
 
   resolvePromises(incomingPromises) {
