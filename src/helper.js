@@ -9,7 +9,7 @@ export default function dataCleaner(dataObject) {
       })
     );
   }
-  if (dataObject[0].manufacturer) {
+  if (dataObject[0].vehicle_class) {
     return dataObject.map( vehicleData =>
       Object.assign({
         Name: vehicleData.name,
