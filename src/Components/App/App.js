@@ -38,16 +38,19 @@ class App extends Component {
   }
 
   toggleFav(card) {
+    const { favoriteCards } = this.state;
+    let newFavoriteArray = [];
+    favoriteCards.includes(card) ?
+      newFavoriteArray = favoriteCards.filter( item => item !== card ) :
+      newFavoriteArray = [...favoriteCards, card];
     this.setState({
-      favoriteCards: [...this.state.favoriteCards, card]
+      favoriteCards: newFavoriteArray
     });
   }
 
   componentDidMount() {
     this.fetchFilmData();
   }
-
-
 
   fetchFilmData() {
     const filmUrl = 'https://swapi.co/api/films';
