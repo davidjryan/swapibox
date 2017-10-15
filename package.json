@@ -31,10 +31,5 @@
     "eslint-plugin-standard": "^3.0.1",
     "fetch-mock": "^5.13.1",
     "react-test-renderer": "^16.0.0"
-  },
-  "jest": {
-         "setupFiles": [
-            "raf/polyfill"
-         ]
-      }
+  }
 }
