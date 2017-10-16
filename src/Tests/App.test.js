@@ -1,101 +1,86 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { shallow, mount } from 'enzyme';
-// import fetchMock from 'fetch-mock';
-// import filmMock from '../MockData/filmMock';
-// import peopleMock from '../MockData/peopleMock';
-// import planetMock from '../MockData/planetMock';
-// import vehicleMock from '../MockData/vehicleMock';
-// import mockFullyOperationalData from '../MockData/mockFullyOperationalData';
-// import App from '../Components/App/App';
-//
-// describe('App', () => {
-//   let wrapper;
-//
-//   afterEach(() => {
-//     expect(fetchMock.calls().unmatched).toEqual([]);
-//     fetchMock.restore();
-//   });
-//
-//   const pause = () => {
-//     return new Promise(res => {
-//       setTimeout(() => {
-//         res();
-//       });
-//     });
-//   };
-//
-//   it('Sets state with data after component mounts', async () => {
-//     fetchMock.get(('https://swapi.co/api/films/'), {
-//       status: 200,
-//       body: mockFullyOperationalData[0]
-//     });
-//     fetchMock.get(('https://swapi.co/api/people/'), {
-//       status: 200,
-//       body: mockFullyOperationalData[1]
-//     });
-//     fetchMock.get(('https://swapi.co/api/planets/'), {
-//       status: 200,
-//       body: mockFullyOperationalData[2]
-//     });
-//     fetchMock.get(('https://swapi.co/api/vehicles/'), {
-//       status: 200,
-//       body: mockFullyOperationalData[3]
-//     });
-//     wrapper = mount(<App />);
-//     await pause();
-//     wrapper.setState({
-//       fullyOperationalData: mockFullyOperationalData
-//     });
-//   });
-//
-//   // const pause = () => {
-//   //   return new Promise(res => {
-//   //     setTimeout( () => {
-//   //       res()
-//   //     }, 0)
-//   //   });
-//   // };
-//   //
-//   // beforeEach( async () => {
-//   //   fetchMock.get('https://swapi.co/api/films/', {
-//   //     status: 200,
-//   //     body: filmMock
-//   //   })
-//   //   fetchMock.get('https://swapi.co/api/people/', {
-//   //     status: 200,
-//   //     body: peopleMock
-//   //   })
-//   //   fetchMock.get('https://swapi.co/api/vehicles/', {
-//   //     status: 200,
-//   //     body: planetMock
-//   //   })
-//   //   fetchMock.get('https://swapi.co/api/planets/', {
-//   //     status: 200,
-//   //     body: vehicleMock
-//   //   })
-//   //
-//   // wrapper = mount(<App />)
-//   //
-//   // await pause()
-//   //
-//   // })
-//   // console.log(wrapper.debug());
-//
-//   // afterEach(() => {
-//   //    expect(fetchMock.calls().unmatched).toEqual([]);
-//   //    fetchMock.restore();
-//   // });
-//
-//   it('should exist', () => {
-//     expect(wrapper).toBeDefined();
-//   });
-//
-//   // it('should not display its card container components by default',
-//       () => {
-//   //   const wrapper = shallow(<App />)
-//   //
-//   //   expect(wrapper.find('CardContainer').length).toEqual(0)
-//   //
-//   // });
-// });
+import React from 'react';
+import { mount } from 'enzyme';
+import fetchMock from 'fetch-mock';
+import filmMockApp from '../MockData/filmMockApp';
+import filmMock from '../MockData/filmMock';
+import vehicleMockApp from '../MockData/vehicleMockApp';
+import vehicleMock from '../MockData/vehicleMock';
+import App from '../Components/App/App';
+import dataCleaner from '../helper';
+
+describe('App', () => {
+  let wrapper;
+  const cleanedFilmData = dataCleaner(filmMock);
+  const cleanedVehicleData = dataCleaner(vehicleMock);
+
+  const pause = () => {
+    return new Promise(res => {
+      setTimeout(() => {
+        res();
+      });
+    });
+  };
+
+  beforeEach( async () => {
+    fetchMock.get('https://swapi.co/api/films', {
+      status: 200,
+      body: filmMockApp
+    });
+    wrapper = mount(<App />);
+    await pause();
+    wrapper.setState({
+      filmData: cleanedFilmData
+    });
+  });
+
+  it('Sets state with data after component mounts', async () => {
+    expect(wrapper.state().filmData).toEqual(cleanedFilmData);
+  });
+
+  it('Loads data and builds cards after user cilck', async () => {
+    const vehicleButton = wrapper.find('.vehicles-btn');
+
+    expect(wrapper.find('Card').length).toEqual(0);
+    fetchMock.get('https://swapi.co/api/vehicles', {
+      status: 200,
+      body: vehicleMockApp
+    });
+
+    vehicleButton.simulate('click');
+    await pause();
+    wrapper.setState({
+      displayData: 'vehicles',
+      vehicleData: cleanedVehicleData
+    });
+
+    expect(wrapper.find('Card').length).toEqual(3);
+
+  });
+
+  it('Should allow user to favorite cards and display favorites', async () => {
+    const vehicleButton = wrapper.find('.vehicles-btn');
+    const favoriteButton = wrapper.find('.favorites-btn');
+
+    expect(wrapper.find('Card').length).toEqual(0);
+    fetchMock.get('https://swapi.co/api/vehicles', {
+      status: 200,
+      body: vehicleMockApp
+    });
+
+    vehicleButton.simulate('click');
+    await pause();
+    wrapper.setState({
+      displayData: 'vehicles',
+      vehicleData: cleanedVehicleData
+    });
+
+    const cardFavButton = wrapper.find('.favorite-button').first();
+
+    expect(wrapper.state().favoriteCards.length).toEqual(0);
+    cardFavButton.simulate('click');
+    expect(wrapper.state().favoriteCards.length).toEqual(1);
+
+    favoriteButton.simulate('click');
+    expect(wrapper.find('Card').length).toEqual(1);
+  });
+});
