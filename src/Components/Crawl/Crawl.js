@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Crawl = ({ films }) => {
-  const randomNumber = Math.floor(Math.random() * 7) + 1;
+  const randomNumber = Math.floor(Math.random() * 8) + 1;
   const movieCrawl = films.find( (film) => {
     return film.episodeNum === randomNumber;
   });

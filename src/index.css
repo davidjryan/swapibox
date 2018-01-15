@@ -9,9 +9,4 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: url('./Assets/deathstar-background.jpg');
-  background-position: 50% 25%;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

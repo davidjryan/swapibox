@@ -144,7 +144,8 @@ class App extends Component {
           name: planets.name,
           terrain: planets.terrain,
           population: planets.population,
-          climate: planets.climate};
+          climate: planets.climate
+        };
 
         const planetInhabitants = planets.residents.map( (planetUrl) => {
           return fetch(planetUrl).then(planetApiCall => planetApiCall.json())
