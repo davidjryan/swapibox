@@ -10,6 +10,10 @@ const Card = ({ cardInformation, toggleFav }) => {
     if (discreteInfo !== 'Name' && discreteInfo !== 'favorite') {
       return (
         <div key={`${discreteInfo} - ${cardInformation.Name}`}>
+          {/* make this div and it's contents into a component
+          so that we can move the card rendering into this and
+          apply unique classes to each card as it appends */}
+
           <p className="card-info-title">{discreteInfo}</p>
           <p className="card-info-body">{cardInformation[discreteInfo]}</p>
         </div>
