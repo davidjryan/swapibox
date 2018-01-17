@@ -169,9 +169,7 @@ class App extends Component {
 
           <main className="content-container">
             <div className="title-container">
-              <h1 className="page-title">SWapi-Box</h1>
               <div className="btns">
-
                 <Button
                   givenClass={this.activeCategory(this.state.displayData,
                     'people') + ' people-btn'}
@@ -196,7 +194,6 @@ class App extends Component {
                   click={ this.showData.bind(this)}
                   text='Favorites'
                   category='favorites' />
-
               </div>
             </div>
             <div className="main-content-container">

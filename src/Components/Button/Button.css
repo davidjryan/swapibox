@@ -2,10 +2,10 @@ button {
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
-  margin: 20px; }
+  margin: 10px 20px; }
 
 .favorite-button {
-  background-color: #FDFFDB;
+  background-color: #EDFFF0;
   color: #3F0E10;
   background: url(../../Assets/Rebel_Alliance_logo_black.svg);
   background-size: cover;
@@ -20,9 +20,13 @@ button {
   background-size: cover;
   background-color: none; }
 
+.nav-btn {
+  background-color: #e5b13a;
+  color: #191A21; }
+
 .activeBtn {
-  background-color: #3F0E10;
-  color: #FDFFDB; }
+  background-color: #191A21;
+  color: #e5b13a; }
 
 .favorites-btn {
   border: 1px solid #734F51; }
