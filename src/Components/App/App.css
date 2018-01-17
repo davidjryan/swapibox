@@ -5,9 +5,18 @@
   background-image: url("../../Assets/deathstar-background.jpg");
   background-size: cover; }
 
+.btns {
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4px; }
+
 .content-container {
   width: auto;
-  height: 100%; }
+  margin: 0 30px;
+  background: rgba(0, 0, 0, 0.2); }
 
 .title-container {
   margin: 20px 5px;

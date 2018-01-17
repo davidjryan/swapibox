@@ -21,12 +21,15 @@ button {
   background-color: none; }
 
 .nav-btn {
+  background-color: #191A21;
+  color: #e5b13a;
+  border: 2px solid #e5b13a; }
+
+.nav-btn:hover, .activeBtn {
   background-color: #e5b13a;
   color: #191A21; }
 
 .activeBtn {
-  background-color: #191A21;
-  color: #e5b13a; }
-
-.favorites-btn {
-  border: 1px solid #734F51; }
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none; }

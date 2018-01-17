@@ -26,15 +26,22 @@ button {
 }
 
 .nav-btn {
+  background-color: $text-dark;
+  color: $crawl-color;
+  border: 2px solid $crawl-color;
+}
+
+.nav-btn:hover, .activeBtn {
   background-color: $crawl-color;
   color: $text-dark;
 }
 
 .activeBtn {
-  background-color: $text-dark;
-  color: $crawl-color;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none;
 }
 
 .favorites-btn {
-  border: 1px solid $body-light;
+
 }
