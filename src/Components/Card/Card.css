@@ -12,8 +12,14 @@
 hr {
   margin: 5px; }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 #734F51; }
+.card-1:hover {
+  box-shadow: 0 0 5px 5px #60db3c; }
+
+.card-2:hover {
+  box-shadow: 0 0 5px 5px #3676f7; }
+
+.card-3:hover {
+  box-shadow: 0 0 5px 5px #ea3f21; }
 
 .card-info-title {
   font-weight: bold;
