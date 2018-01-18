@@ -4,6 +4,8 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
+  const ranNum = (Math.floor(Math.random() * 3) + 1);
+
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
@@ -19,7 +21,7 @@ const Card = ({ cardInformation, toggleFav }) => {
   });
 
   return (
-    <div className="card">
+    <div className={`card card-${ranNum}`}>
       <h2 className="card-title ">
         {cardInformation.Name}
       </h2>

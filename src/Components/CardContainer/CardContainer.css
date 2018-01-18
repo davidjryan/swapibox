@@ -2,6 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: #3F0E10;
+  background: rgba(0, 0, 0, 0.5);
   margin: 15px;
   overflow: auto; }

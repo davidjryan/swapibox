@@ -4,7 +4,7 @@ button {
   border-radius : 4px;
   font-size: 16px;
   padding: 10px;
-  margin: 20px;
+  margin: 10px 20px;
 }
 
 .favorite-button {
@@ -18,18 +18,30 @@ button {
   display: inline-block;
 }
 
-.favorite-button:hover {
+.favorite-button:hover, .favorite {
   background: url(../../Assets/Rebel_Alliance_logo_white.svg);
   background-repeat: none;
   background-size: cover;
   background-color: none;
 }
 
+.nav-btn {
+  background-color: $text-dark;
+  color: $crawl-color;
+  border: 2px solid $crawl-color;
+}
+
+.nav-btn:hover, .activeBtn {
+  background-color: $crawl-color;
+  color: $text-dark;
+}
+
 .activeBtn {
-  background-color: $body-dark;
-  color: $text-light;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none;
 }
 
 .favorites-btn {
-  border: 1px solid $body-light;
+
 }

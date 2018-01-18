@@ -15,9 +15,18 @@ hr {
   margin: 5px;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 $body-light;
+.card-1:hover {
+  box-shadow: 0 0 5px 5px $lightsaber-green;
 }
+
+.card-2:hover {
+  box-shadow: 0 0 5px 5px $lightsaber-blue;
+}
+
+.card-3:hover {
+  box-shadow: 0 0 5px 5px $lightsaber-red;
+}
+
 .card-info-title {
   font-weight: bold;
   font-size: 1.4em;

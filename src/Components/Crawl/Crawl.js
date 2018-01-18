@@ -8,7 +8,7 @@ const Crawl = ({ films }) => {
   });
   return (
     <div className="crawl-container">
-      <aside className="side-bar">
+      <aside className="crawl-flex">
         <div className="crawl">
           <h2 className="crawl-title">{movieCrawl.title}</h2>
           <h2 className="crawl-title">{movieCrawl.releaseYear}</h2>

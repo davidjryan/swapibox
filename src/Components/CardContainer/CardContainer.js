@@ -9,7 +9,9 @@ const CardContainer = ({cardData, toggleFav}) => {
       <Card
         cardInformation={ item }
         toggleFav={ toggleFav }
-        key={`${item.Name} - ${index}`} />
+        key={`${item.Name} - ${index}`}
+        className="card"
+      />
     );
   });
   return (

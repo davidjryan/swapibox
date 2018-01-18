@@ -2,10 +2,10 @@ button {
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
-  margin: 20px; }
+  margin: 10px 20px; }
 
 .favorite-button {
-  background-color: #FDFFDB;
+  background-color: #EDFFF0;
   color: #3F0E10;
   background: url(../../Assets/Rebel_Alliance_logo_black.svg);
   background-size: cover;
@@ -14,15 +14,22 @@ button {
   border-style: none;
   display: inline-block; }
 
-.favorite-button:hover {
+.favorite-button:hover, .favorite {
   background: url(../../Assets/Rebel_Alliance_logo_white.svg);
   background-repeat: none;
   background-size: cover;
   background-color: none; }
 
-.activeBtn {
-  background-color: #3F0E10;
-  color: #FDFFDB; }
+.nav-btn {
+  background-color: #191A21;
+  color: #e5b13a;
+  border: 2px solid #e5b13a; }
 
-.favorites-btn {
-  border: 1px solid #734F51; }
+.nav-btn:hover, .activeBtn {
+  background-color: #e5b13a;
+  color: #191A21; }
+
+.activeBtn {
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none; }
