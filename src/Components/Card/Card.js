@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 const Card = ({ cardInformation, toggleFav }) => {
   const ranNum = (Math.floor(Math.random() * 3) + 1);
 
-  console.log(ranNum);
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
