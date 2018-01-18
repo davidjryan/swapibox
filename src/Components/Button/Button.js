@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+import classnames from 'classnames';
 import './Button.css';
 import PropTypes from 'prop-types';
 
-const Button = ({ click, text, givenClass, category, cardInformation }) => {
-  let buttonClass;
-  if (!cardInformation) {
-    buttonClass = `${givenClass} nav-btn`;
-    return (
-      <button
-        onClick={() => click(category)}
-        className={buttonClass}>
-        {text}
-      </button>
-    );
+class Button extends Component {
+  constructor() {
+    super();
+    this.state = {
+      favorite: false
+    };
   }
 
-  buttonClass = `${givenClass}`;
-  return (
-    <button
-      onClick={() => click(category)}
-      className={buttonClass}>
-      {text}
-    </button>
-  );
-};
+  updateFavState() {
+    this.setState({
+      favorite: !this.state.favorite
+    });
+  }
+
+  render() {
+    let buttonClass;
+
+    if (!this.props.cardInformation) {
+      buttonClass = `${this.props.givenClass} nav-btn`;
+      return (
+        <button
+          onClick={() => this.props.click(this.props.category)}
+          className={buttonClass}>
+          {this.props.text}
+        </button>
+      );
+    }
+
+    buttonClass = classnames(`${this.props.givenClass}`, {favorite: this.state.favorite});
+    return (
+      <button
+        onClick={() => {
+          this.props.click(this.props.category);
+          this.updateFavState();
+        }}
+        className={buttonClass}>
+        {this.props.text}
+      </button>
+    );
+
+  }
+}
 
 Button.propTypes = {
   click: PropTypes.func.isRequired,

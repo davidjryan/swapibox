@@ -14,7 +14,7 @@ button {
   border-style: none;
   display: inline-block; }
 
-.favorite-button:hover {
+.favorite-button:hover, .favorite {
   background: url(../../Assets/Rebel_Alliance_logo_white.svg);
   background-repeat: none;
   background-size: cover;
