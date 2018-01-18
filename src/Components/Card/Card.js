@@ -4,16 +4,15 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ cardInformation, toggleFav }) => {
+  const ranNum = (Math.floor(Math.random() * 3) + 1);
+
+  console.log(ranNum);
   const cardKeys = Object.keys(cardInformation);
 
   const cardDetails = cardKeys.map( (discreteInfo) => {
     if (discreteInfo !== 'Name' && discreteInfo !== 'favorite') {
       return (
         <div key={`${discreteInfo} - ${cardInformation.Name}`}>
-          {/* make this div and it's contents into a component
-          so that we can move the card rendering into this and
-          apply unique classes to each card as it appends */}
-
           <p className="card-info-title">{discreteInfo}</p>
           <p className="card-info-body">{cardInformation[discreteInfo]}</p>
         </div>
@@ -23,7 +22,7 @@ const Card = ({ cardInformation, toggleFav }) => {
   });
 
   return (
-    <div className="card">
+    <div className={`card card-${ranNum}`}>
       <h2 className="card-title ">
         {cardInformation.Name}
       </h2>
