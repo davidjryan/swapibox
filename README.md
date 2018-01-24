@@ -2,7 +2,7 @@
 
 This project makes a variety fo API calls to the Star Wars API (SWAPI) to display data for a user in React frontend.
 
-![SWAPI Box Gif](http://www.giphy.com/gifs/xUOwURU9YGJc3IA0hy)
+![swapi](https://user-images.githubusercontent.com/22566946/35356608-2aca7b28-010e-11e8-9e33-2fce1bbc3c1e.gif)
 
 ## Getting Started
 
